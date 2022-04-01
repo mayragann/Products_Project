@@ -7,23 +7,11 @@
 	"item": [
 		{
 			"name": "Get_All_Products",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/products/10",
+					"raw": "http://127.0.0.1:8000/api/products/",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -35,7 +23,7 @@
 					"path": [
 						"api",
 						"products",
-						"10"
+						""
 					]
 				}
 			},
@@ -48,7 +36,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"PS3\",\r\n    \"description\": \"We love Sony!\",\r\n    \"price\": 199.0,\r\n    \"inventory_quantity\": 20\r\n}",
+					"raw": "{\r\n    \"title\": \"PS1\",\r\n    \"description\": \"We love Sony!\",\r\n    \"price\": 399.0,\r\n    \"inventory_quantity\": 20,\r\n    \"image_link\":\"\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -102,16 +90,59 @@
 		{
 			"name": "Update_Product",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"id\": 2,\r\n        \"title\": \"xboxOne\",\r\n        \"description\": \"Not as great as the PS5--but it can be used as well...still can be played ok\",\r\n        \"price\": 399.0,\r\n        \"inventory_quantity\": 100,\r\n        \"image_link\": \"https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RWbGIz?ver=678e&q=90&m=6&h=270&w=270&b=%23FFFFFFFF&f=jpg&o=f&aim=true\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/products/2/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"2",
+						""
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Delete_Product",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/products/4/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"4",
+						""
+					]
+				}
 			},
 			"response": []
 		}
